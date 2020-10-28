@@ -5,6 +5,8 @@
     },
     "etherscanURL": "https://etherscan.io/",
     "etherscanURLRopsten": "https://ropsten.etherscan.io/",
+    "coingeckoEthereumPriceURL": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum",
+    "coingeckoEthereumPriceRequestInterval": 600000,
     "whereIsMyDragonEthItemAddress" : "0xb6ab68A44eCc9fb2244AaB83eB2f6dbA54205EBf",
     "whereIsMyDragonEthItemAddressRopsten" : "",
     "treasureAddress" : "0x32c87193C2cC9961F2283FcA3ca11A483d8E426B",

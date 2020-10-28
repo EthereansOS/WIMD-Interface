@@ -2132,4 +2132,21 @@ window.sleep = function sleep(millis) {
     return new Promise(function(ok) {
         setTimeout(ok, millis);
     });
-}
+};
+
+window.getTokenPriceInDollarsOnUniswap = async function getTokenPriceInDollarsOnUniswap(tokenAddress, decimals, amountPlain) {
+    var ethereumPrice = await window.getEthereumPrice();
+    var path = [
+        tokenAddress,
+        window.wethAddress
+    ];
+    var amount = window.toDecimals(window.numberToString(!isNaN(amountPlain) ? amountPlain : 1), decimals);
+    var ethereumValue = "0";
+    try {
+        ethereumValue = (await window.blockchainCall(window.uniswapV2Router.methods.getAmountsOut, amount, path))[1];
+    } catch(e) {
+    }
+    ethereumValue = parseFloat(window.fromDecimals(ethereumValue, decimals));
+    ethereumValue *= ethereumPrice;
+    return ethereumValue;
+};
