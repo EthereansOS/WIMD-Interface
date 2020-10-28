@@ -8,6 +8,7 @@ window.pragmaSolidityRule = new RegExp("pragma( )+solidity( )*(\\^|>)\\d+.\\d+.\
 window.base64Regex = new RegExp("data:([\\S]+)\\/([\\S]+);base64", "gs");
 
 window.Main = async function Main() {
+    window.getPage();
     await window.loadContext();
     await window.onEthereumUpdate(0);
     window.loadAddressBarParam();
@@ -17,7 +18,7 @@ window.Main = async function Main() {
 window.connectFromHomepage = async function connectFromHomepage(button) {
     button && (button.innerHTML = '<spa class="loaderMinimino"></span>');
     button && (button.className = '');
-    window.getPage();
+    await window.loadContext();
     window.choosePage();
 };
 
@@ -28,7 +29,6 @@ window.checkTreasureBalance = async function checkTreasureBalance() {
 };
 
 window.loadAddressBarParam = async function loadAddressBarParam() {
-    window.getPage();
     if(window.addressBarParams.toggle) {
         window.choosePage();
     }
