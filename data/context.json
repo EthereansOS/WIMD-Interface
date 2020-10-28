@@ -23,6 +23,7 @@
     "ipfsUrlChanger" : "https://gateway.ipfs.io/ipfs/",
     "openSeaItemLinkTemplate" : "https://opensea.io/assets/{0}/{1}",
     "openSeaCollectionLinkTemplate" : "https://opensea.io/assets/{0}",
+    "stakingUrlTemplate" : "https://dapp.dfohub.com?staking={0}",
     "ethItemLinkTemplate" : "",
     "uniswapSpawUrlTemplate" : "https://swap.whereismydragon.com/#/swap?inputCurrency={0}",
     "keyUpTimeoutInterval" : 550,
@@ -75,26 +76,6 @@
         "5 Years" : {
             "averages" : [10440000, 11520000, 12600000],
             "weeks" : 240
-        }
-    },
-    "stakingContracts" : {
-        "Season One" : {
-            "953680776037830019376762634780957885111415987285" : {
-                "token" : "Magician Unicorn",
-                "stakingAddresses" : ["0xC2Ebd5Ff7d2B6c4874329939330F8104aB6ABF66", "0x323094ad74933163e0E5EcFc785a84b6D024c83B"]
-            },
-            "708710380818572902317750208759935671347114619642" : {
-                "token" : "Magician Cat",
-                "stakingAddresses" : ["0xbd439b1EdDC16594a1eB44952CCe12DB728D048b", "0x00212AeebB678f138a2C79638180B2522200BEfa"]
-            },
-            "1314350493399825849440291684746997404115301872024" : {
-                "token" : "Penguin Fancy Shoes",
-                "stakingAddresses" : ["0x80b03932039D70B42CF1a156B8ca721bA5082FAf", "0x349BcF1206FAeD89aFb850A01eF75673547B08eb"]
-            },
-            "1111946385153737223689257886665575715568350448705" : {
-                "token" : "Unicorn Cat",
-                "stakingAddresses" : ["0x9249896dFAff96A22Db9a4e682EEaCbd186581c4"]
-            }
         }
     }
 }
