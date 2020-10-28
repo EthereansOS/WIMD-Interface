@@ -20,8 +20,8 @@ window.connectFromHomepage = async function connectFromHomepage(button) {
 };
 
 window.checkTreasureBalance = async function checkTreasureBalance() {
-    var balanceOf = window.web3.utils.fromWei(await window.web3.eth.getBalance(window.getNetworkElement("treasureAddress")), "ether");
-    $(".balance").html(window.formatMoney(balanceOf, 1) + " ETH");
+    window.balanceOf = window.web3.utils.fromWei(await window.web3.eth.getBalance(window.getNetworkElement("treasureAddress")), "ether");
+    $(".balance").html(window.formatMoney(window.balanceOf, 1) + " ETH");
     $('.loaderLOL').addClass('mini');
 };
 
