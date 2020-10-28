@@ -12,14 +12,15 @@ contract WhereIsMyDragonTreasure is IERC1155Receiver, ERC165 {
     uint256 private _legendaryCard;
 
     uint256 private _singleReward;
+    uint256 private _legendaryCardAmount;
     uint256 private _startBlock;
 
     uint256 private _redeemed;
 
-    constructor(address source, uint256 legendaryCard, uint256 singleReward, uint256 startBlock) payable {
+    constructor(address source, uint256 legendaryCard, uint256 legendaryCardAmount, uint256 startBlock) {
         _source = source;
         _legendaryCard = legendaryCard;
-        _singleReward = singleReward;
+        _legendaryCardAmount = legendaryCardAmount;
         _startBlock = startBlock;
         _registerInterfaces();
     }
@@ -30,6 +31,11 @@ contract WhereIsMyDragonTreasure is IERC1155Receiver, ERC165 {
     }
 
     receive() external payable {
+        if(block.number >= _startBlock) {
+            payable(msg.sender).transfer(msg.value);
+            return;
+        }
+        _singleReward = address(this).balance / _legendaryCardAmount;
     }
 
     function data() public view returns(uint256 balance, uint256 singleReward, uint256 startBlock, uint256 redeemed) {
@@ -74,7 +80,7 @@ contract WhereIsMyDragonTreasure is IERC1155Receiver, ERC165 {
         require(block.number >= _startBlock, "Redeem Period still not started");
         for(uint256 i = 0; i < objectIds.length; i++) {
             require(objectIds[i] == _legendaryCard, "Wrong Card!");
-            _redeemed++;
+            _redeemed += amounts[i];
             payable(from).transfer(_singleReward * amounts[i]);
         }
         IEthItem(_source).burnBatch(objectIds, amounts);
