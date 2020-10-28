@@ -16,7 +16,7 @@ var Farming = React.createClass({
                     <a className="unibtn" href={window.context.uniswapSpawUrlTemplate.format(it.erc20Wrapper)} target="_blank">&#129412;swap</a>
                 </section>)}
                 <section className="FarmingSeason">
-                <h2 className="BrandizedS">Season 1 <a target="_blank" href="https://etherscan.io/block/countdown/11246089">(Ending block n. 11246089)</a></h2>
+                <h2 className="BrandizedS">Farming Season 1 <a target="_blank" href="https://etherscan.io/block/countdown/11246089">(Ending block n. 11246089)</a></h2>
                     <section className="FarmingTier">
                         <img src=""></img>
                         <p>Earn 1 Name Card for every:</p> 
@@ -28,7 +28,7 @@ var Farming = React.createClass({
                     </section>
                 </section>
                 <section className="FarmingSeason">
-                <h2 className="BrandizedS">Long Term Season <a target="_blank" href="https://etherscan.io/block/countdown/11246089">(Ending block n. 11246089)</a></h2>
+                <h2 className="BrandizedS">Farming Long Term Season <a target="_blank" href="https://etherscan.io/block/countdown/11246089">(Ending block n. 11246089)</a></h2>
                     <section className="FarmingTier">
                         <img src=""></img>
                         <p>Earn 1 Name Card for every:</p> 
