@@ -17,6 +17,7 @@ window.Main = async function Main() {
 window.connectFromHomepage = async function connectFromHomepage(button) {
     button && (button.innerHTML = '<spa class="loaderMinimino"></span>');
     button && (button.className = '');
+    window.getPage();
     window.choosePage();
 };
 
