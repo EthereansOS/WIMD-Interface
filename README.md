@@ -24,7 +24,7 @@ Uniswap: Penguin Fancy Shoes (tot supply: 10,000)</a><br>
 <a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0xc2c5667f69E881C83Fc4692f7A08a22370B4cc41">
 Uniswap: Unicorn Cat (tot supply: 9,975)</a><br>
 <a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0xA70C8667cCFB63D6b98C2A050c94b7Bf2085dC55">
-Uniswap: Magician Unicorn (supply: 10,000)</a><br>
+Uniswap: Magician Unicorn (tot supply: 10,000)</a><br>
 
 <a href="https://opensea.io/assets/where-is-my-dragon">Collection on OpenSea</a>
 
@@ -52,7 +52,7 @@ They can also be bought on the market (if someone acquires and sells one)
 
 ## Crafting
 
-All crafting formulas require different amounts of the three card types.
+All crafting formulas require different amounts of the three card types. Crafting card is the action to burn the crafted cards to obtain a new rare one.
 
 The exact amount and types of cards required to craft is a secret!
 
