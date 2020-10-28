@@ -37,7 +37,7 @@ var Farming = React.createClass({
                             var tokenKey = tokenEntry[0];
                             var tokenValue = tokenEntry[1];
                             var stakingData = tokenValue.stakingData.stakingData[0];
-                            var amountFor1 = 100 * stakingData.tiers[0].percentage;
+                            var amountFor1 = stakingData.tiers[0].percentage;
                             return (<section key={tokenKey} className="FarmingTier">
                                 <img src={window.formatLink(stakingData.rewardToken.logo || stakingData.rewardToken.logoURI)}/>
                                 <p>Earn 1 {stakingData.rewardToken.name} Card for every:</p>
