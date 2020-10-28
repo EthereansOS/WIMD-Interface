@@ -10,7 +10,6 @@ var FarmingController = function (view) {
                 item
             };
             stateItem.priceInDollars = await window.getTokenPriceInDollarsOnUniswap(item.erc20Wrapper, 18);
-            console.log(stateItem);
             items.push(stateItem);
         }
         context.view.setState({items});

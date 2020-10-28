@@ -1616,34 +1616,24 @@ function getPage() {
     return location;
 };
 
-window.loadStakingData = async function loadStakingData(element) {
+window.loadStakingData = async function loadStakingData(contracts) {
     var blockTiers = {};
     Object.keys(window.context.blockTiers).splice(2, Object.keys(window.context.blockTiers).length).forEach(it => blockTiers[it] = window.context.blockTiers[it]);
-    var json = await window.blockchainCall(element.stateHolder.methods.toJSON);
-    json = JSON.parse(json.endsWith(',]') ? (json.substring(0, json.lastIndexOf(',]')) + ']') : json);
     var stakingData = [];
-    for (var i in json) {
-        var elem = json[i];
-        if (elem.name.indexOf('staking.transfer.authorized.') === -1 && elem.name.indexOf('authorizedtotransferforstaking_') === -1) {
-            continue;
-        }
-        var active = await window.blockchainCall(element.stateHolder.methods.getBool, elem.name);
-        var split = elem.name.split('.');
-        split.length === 1 && (split = elem.name.split('_'));
-        var stakingManager = window.newContract(window.context.LiquidityMiningContractABI, split[split.length - 1]);
-        stakingData.push(await window.setStakingManagerData(element, stakingManager, blockTiers, active));
+    for (var contract of contracts) {
+        contract = window.web3.utils.toChecksumAddress(contract);
+        var stakingManager = window.newContract(window.context.LiquidityMiningContractABI, contract);
+        stakingData.push(await window.setStakingManagerData(stakingManager, blockTiers, true));
     }
     return { stakingData, blockTiers };
 };
 
-window.setStakingManagerData = async function setStakingManagerData(element, stakingManager, blockTiers, active) {
+window.setStakingManagerData = async function setStakingManagerData(stakingManager, blockTiers, active) {
     var stakingManagerData = {
         stakingManager,
         active,
         blockTiers
     };
-    stakingManagerData.mainToken = await window.loadTokenInfos(element.token.options.address);
-    stakingManagerData.rewardToken = stakingManagerData.mainToken;
     try {
         stakingManagerData.mainToken = await window.loadTokenInfos(await window.blockchainCall(stakingManager.methods.tokenAddress));
         stakingManagerData.rewardToken = await window.loadTokenInfos(await window.blockchainCall(stakingManager.methods.rewardTokenAddress));
