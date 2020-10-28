@@ -25,6 +25,7 @@ var Farming = React.createClass({
                     <br></br>
                     <a className="unibtn" href={window.context.uniswapSpawUrlTemplate.format(it.erc20Wrapper)} target="_blank">&#129412;swap</a>
                 </section>)}
+                <section className="Delimitator"></section>
                 {(!this.state || !this.state.stakingContracts) && <InlineLoader />}
                 {this.state && this.state.stakingContracts && Object.entries(this.state.stakingContracts).map(seasonEntry => {
                     var seasonKey = seasonEntry[0];
@@ -36,14 +37,15 @@ var Farming = React.createClass({
                             var tokenKey = tokenEntry[0];
                             var tokenValue = tokenEntry[1];
                             var stakingData = tokenValue.stakingData.stakingData[0];
-                            var amountFor1 = 1 / stakingData.tiers[0].percentage;
+                            var amountFor1 = 100 * stakingData.tiers[0].percentage;
                             return (<section key={tokenKey} className="FarmingTier">
                                 <img src={window.formatLink(stakingData.rewardToken.logo || stakingData.rewardToken.logoURI)}/>
                                 <p>Earn 1 {stakingData.rewardToken.name} Card for every:</p>
+                                <a className="GoToFarm" target="_blank" href={window.context.stakingUrlTemplate.format(stakingData.stakingManager.options.address)}>FARM</a>
+                                <br></br>
                                 <section className="FarmingTierDeal">
                                     <img src={window.formatLink(stakingData.mainToken.logo || stakingData.mainToken.logoURI)}/>
                                     <p>{window.formatMoney(amountFor1, 2)} {stakingData.mainToken.symbol} locked in the Uniswap V2 pair {stakingData.mainToken.symbol} - {stakingData.pairs[0].symbol} {stakingData.tiers[0].tierKey} (Available: {window.fromDecimals(stakingData.tiers[0].remainingToStake, stakingData.mainToken.decimals)})</p>
-                                    <a className="GoToFarm" target="_blank" href={window.context.stakingUrlTemplate.format(stakingData.stakingManager.options.address)}>FARM</a>
                                 </section>
                             </section>);
                         })}
