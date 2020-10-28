@@ -14,6 +14,7 @@ var Index = React.createClass({
         "spa/farming"
     ],
     componentDidMount() {
+        this.controller.loadAddressBarParam();
         this.controller.loadData();
     },
     toggleFarming(e) {

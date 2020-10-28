@@ -4,6 +4,12 @@ var IndexController = function (view) {
 
     context.mintEvent = "Mint(uint256,address,uint256)";
 
+    context.loadAddressBarParam = function loadAddressBarParam() {
+        var toggle = window.addressBarParams.toggle;
+        delete window.addressBarParams.toggle;
+        toggle && context.view.setState({toggle});
+    };
+
     context.loadData = async function loadData() {
         context.view.setState({collectionName : null, items : null});
         window.whereIsMyDragonEthItem = await window.newContract(window.context.IEthItemABI, window.getNetworkElement("whereIsMyDragonEthItemAddress"));

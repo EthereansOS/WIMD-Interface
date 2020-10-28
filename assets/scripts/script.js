@@ -10,6 +10,7 @@ window.base64Regex = new RegExp("data:([\\S]+)\\/([\\S]+);base64", "gs");
 window.Main = async function Main() {
     await window.loadContext();
     await window.onEthereumUpdate(0);
+    window.loadAddressBarParam();
     window.checkTreasureBalance();
 };
 
@@ -23,6 +24,13 @@ window.checkTreasureBalance = async function checkTreasureBalance() {
     window.balanceOf = window.web3.utils.fromWei(await window.web3.eth.getBalance(window.getNetworkElement("treasureAddress")), "ether");
     $(".balance").html(window.formatMoney(window.balanceOf, 1) + " ETH");
     $('.loaderLOL').addClass('mini');
+};
+
+window.loadAddressBarParam = async function loadAddressBarParam() {
+    window.getPage();
+    if(window.addressBarParams.toggle) {
+        window.choosePage();
+    }
 };
 
 window.newContract = function newContract(abi, address) {
@@ -229,7 +237,6 @@ window.deepCopy = function deepCopy(data, extension) {
 };
 
 window.choosePage = async function choosePage() {
-    window.getPage();
     if (await window.loadCustomizedPage()) {
         return;
     }
