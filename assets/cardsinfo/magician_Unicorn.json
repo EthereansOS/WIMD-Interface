@@ -1,0 +1,20 @@
+{
+    "external_url": "https://whereismydragon.eth",
+    "image": "https://ipfs.io/ipfs/QmNaoH5eStRyoYswCxE5CsXzx5yb7KyX36ThAgyv3uSQpT",
+    "description": "Magicians are being sighted between blocks more and more often. How they turn into Unicorns remains a mystery, and there are rumors they can evolve into strange, supernatural creatures. More info about the 'Where is my dragon?' card game here: https://whereismydragon.eth - https://whereismydragon.eth.link",
+    "background_color": "#ffffff",
+    "name": "Magician Unicorn",
+    "logoURI": "https://ipfs.io/ipfs/QmNaoH5eStRyoYswCxE5CsXzx5yb7KyX36ThAgyv3uSQpT",
+    "attributes": [
+        {
+        "trait_type": "Rarity", 
+        "value": "Common"
+        },
+        {
+        "display_type": "number", 
+        "trait_type": "Generation", 
+        "value": 1
+        }
+    ], 
+    "chainId": 1
+}

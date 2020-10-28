@@ -1,0 +1,20 @@
+{
+    "external_url": "https://whereismydragon.eth",
+    "image": "https://ipfs.io/ipfs/QmUDaGQZyNts6FAfYWzhjFzGTjWALzuZcQY91bDKBmVWur",
+    "description": "Unicorn Dragons are legendary. We can’t be sure they really exist. But if they do, they must hoard extraordinary treasure, treasure that can be yours, if you can find them. More info about the 'Where is my dragon?' card game here: https://whereismydragon.eth - https://whereismydragon.eth.link",
+    "background_color": "#ffffff",
+    "name": "Unicorn Dragon",
+    "logoURI": "https://ipfs.io/ipfs/QmUDaGQZyNts6FAfYWzhjFzGTjWALzuZcQY91bDKBmVWur",
+    "attributes": [
+        {
+        "trait_type": "Rarity", 
+        "value": "Legendary"
+        },
+        {
+        "display_type": "number", 
+        "trait_type": "Generation", 
+        "value": 1
+        }
+    ], 
+    "chainId": 1
+}

@@ -1,0 +1,20 @@
+{
+    "external_url": "https://whereismydragon.eth",
+    "image": "https://ipfs.io/ipfs/QmUGMkpUv8tGjogUkocnRyZ8WcsmwEbpyXLGERPMKPRsmX",
+    "description": "Penguins are DeFi addicts, who spend all of the DAI and USDC they earn from farming, lending and staking on fancy shoes—and they always buy four shoes at once. Why? And it looks like they know something about dragons, too…  More info about the 'Where is my dragon?' card game here: https://whereismydragon.eth - https://whereismydragon.eth.link",
+    "background_color": "#ffffff",
+    "name": "Penguin Fancy Shoes",
+    "logoURI": "https://ipfs.io/ipfs/QmUGMkpUv8tGjogUkocnRyZ8WcsmwEbpyXLGERPMKPRsmX",
+    "attributes": [
+        {
+        "trait_type": "Rarity", 
+        "value": "Common"
+        },
+        {
+        "display_type": "number", 
+        "trait_type": "Generation", 
+        "value": 1
+        }
+    ], 
+    "chainId": 1
+}

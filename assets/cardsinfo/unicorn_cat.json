@@ -1,0 +1,20 @@
+{
+    "external_url": "https://whereismydragon.eth",
+    "image": "https://ipfs.io/ipfs/QmRmtjJDHAuiQi2B6pVvWnviXxDgri8m4HJjv7tj2STuo6",
+    "description": "In the Ethereum network, everyone loves Unicorn Cats. They're adorable!. More info about the 'Where is my dragon?' card game here: https://whereismydragon.eth - https://whereismydragon.eth.link",
+    "background_color": "#ffffff",
+    "name": "Unicorn Cat",
+    "logoURI": "https://ipfs.io/ipfs/QmRmtjJDHAuiQi2B6pVvWnviXxDgri8m4HJjv7tj2STuo6",
+    "attributes": [
+        {
+        "trait_type": "Rarity", 
+        "value": "Common"
+        },
+        {
+        "display_type": "number", 
+        "trait_type": "Generation", 
+        "value": 1
+        }
+    ], 
+    "chainId": 1
+}

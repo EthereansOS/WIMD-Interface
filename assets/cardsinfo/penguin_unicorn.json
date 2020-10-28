@@ -1,0 +1,20 @@
+{
+    "external_url": "https://whereismydragon.eth",
+    "image": "https://ipfs.io/ipfs/QmfCbaMU3QyeyzNx65eRZMZHevLHXB3pw1FgNiyispLJ46",
+    "description": "According to an ancient myth, wonderful creatures known as Penguin Unicorns once roamed the blockchain, living in harmony with nature. Tragically, they became hooked on DeFi, and devolved into the degenerates we see among us today. But some say that a few Penguin Unicorns stayed pure, and can be found today by the searching eye. More info about the 'Where is my dragon?' card game here: https://whereismydragon.eth - https://whereismydragon.eth.link",
+    "background_color": "#ffffff",
+    "name": "Penguin Unicorn",
+    "logoURI": "https://ipfs.io/ipfs/QmfCbaMU3QyeyzNx65eRZMZHevLHXB3pw1FgNiyispLJ46",
+    "attributes": [
+        {
+        "trait_type": "Rarity", 
+        "value": "Rare"
+        },
+        {
+        "display_type": "number", 
+        "trait_type": "Generation", 
+        "value": 1
+        }
+    ], 
+    "chainId": 1
+}
