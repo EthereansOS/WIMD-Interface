@@ -10,8 +10,16 @@ var Index = React.createClass({
         "spa/index/cardCraftSelector.jsx",
         "spa/index/cardInfo.jsx"
     ],
+    requiredModules : [
+        "spa/farming"
+    ],
     componentDidMount() {
         this.controller.loadData();
+    },
+    toggleFarming(e) {
+        e && e.preventDefault && e.preventDefault(true) && e.stopPropagation && e.stopPropagation(true);
+        var toggle = (this.state && this.state.toggle);
+        this.setState({toggle : toggle === 'farming' ? null : 'farming'});
     },
     perform(e) {
         e && e.preventDefault && e.preventDefault(true) && e.stopPropagation && e.stopPropagation(true);
@@ -87,6 +95,7 @@ var Index = React.createClass({
                 <a className="navLink BrandizedS" target="_blank" href="https://bafybeidohofcst2oxulj75mxdogz77ky7ldhvz27pcqx7htyatuazrcvwi.ipfs.dweb.link/">Uniswap</a>
                 <a className="navLink BrandizedS" target="_blank" href={window.context.openSeaCollectionLinkTemplate.format(this.state && this.state.collectionName)}>OpenSea</a>
                 {!window.walletAddress && <a className="connect Brandized" href="javascript:;" onClick={window.ethereum.enable()}>Connect</a>}
+                {props.items && props.items.length > 0 && <a className="navLink BrandizedS" href="javascript:;" onClick={this.toggleFarming}>Farming</a>}
                 {window.walletAddress && <a className="connect BrandizedS" target="_blank" href={window.getNetworkElement("etherscanURL") + "address/" + window.walletAddress}>{window.shortenWord(window.walletAddress, 15)}</a>}
             </header>
             {(!props.items || props.items.length === 0) && <InlineLoader />}
@@ -107,6 +116,7 @@ var Index = React.createClass({
                     </section>)}
                 </section>
             </section>}
+            {props.items && props.items.length > 0 && props.toggle === 'farming' && <Farming sortedItems={sortedItems}/>}
         </section>);
     }
 });
