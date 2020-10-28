@@ -29,7 +29,6 @@ var FarmingController = function (view) {
                 item.stakingData = await window.loadStakingData(item.stakingAddresses);
             }
         }
-        console.log(stakingContracts);
         context.view.setState({stakingContracts});
     };
 }

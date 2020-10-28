@@ -1,5 +1,5 @@
 {
-    "Season One" : {
+    "Farming: Season One" : {
         "953680776037830019376762634780957885111415987285" : {
             "token" : "Magician Unicorn",
             "stakingAddresses" : ["0x323094ad74933163e0E5EcFc785a84b6D024c83B"]
@@ -17,7 +17,7 @@
             "stakingAddresses" : ["0x9249896dFAff96A22Db9a4e682EEaCbd186581c4"]
         }
     },
-    "Long Term" : {
+    "Farming: Long Term Season" : {
         "953680776037830019376762634780957885111415987285" : {
             "token" : "Magician Unicorn",
             "stakingAddresses" : ["0xC2Ebd5Ff7d2B6c4874329939330F8104aB6ABF66"]

@@ -1497,10 +1497,8 @@ window.loadUniswapPairs = async function loadUniswapPairs(view, address) {
     uniswapPairs.length === 0 && view.enqueue(() => view.setState({ uniswapPairs }));
 };
 
-window.loadTokenInfos = async function loadTokenInfos(addresses, wethAddress) {
+window.loadTokenInfos = async function loadTokenInfos(addresses) {
     window.loadedTokens = window.loadedTokens || {};
-    wethAddress = wethAddress || await window.blockchainCall(window.newContract(window.context.uniSwapV2RouterAbi, window.context.uniSwapV2RouterAddress).methods.WETH);
-    wethAddress = window.web3.utils.toChecksumAddress(wethAddress);
     var single = (typeof addresses).toLowerCase() === 'string';
     addresses = single ? [addresses] : addresses;
     var tokens = [];
@@ -1510,10 +1508,10 @@ window.loadTokenInfos = async function loadTokenInfos(addresses, wethAddress) {
         tokens.push(window.loadedTokens[address] || (window.loadedTokens[address] = {
             address,
             token,
-            name: address === wethAddress ? 'Ethereum' : await window.blockchainCall(token.methods.name),
-            symbol: address === wethAddress ? 'ETH' : await window.blockchainCall(token.methods.symbol),
-            decimals: address === wethAddress ? '18' : await window.blockchainCall(token.methods.decimals),
-            logo: await window.loadLogo(address === wethAddress ? window.voidEthereumAddress : address)
+            name: address === window.wethAddress ? 'Ethereum' : await window.blockchainCall(token.methods.name),
+            symbol: address === window.wethAddress ? 'ETH' : await window.blockchainCall(token.methods.symbol),
+            decimals: address === window.wethAddress ? '18' : await window.blockchainCall(token.methods.decimals),
+            logo: await window.loadLogo(address === window.wethAddress ? window.voidEthereumAddress : address)
         }));
     }
     return single ? tokens[0] : tokens;
