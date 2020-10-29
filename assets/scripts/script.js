@@ -10,12 +10,15 @@ window.base64Regex = new RegExp("data:([\\S]+)\\/([\\S]+);base64", "gs");
 window.Main = async function Main() {
     window.getPage();
     await window.loadContext();
-    await window.onEthereumUpdate(0);
+    window.ethereum && await window.onEthereumUpdate(0);
     window.loadAddressBarParam();
     window.checkTreasureBalance();
 };
 
 window.connectFromHomepage = async function connectFromHomepage(button) {
+    if(!window.ethereum) {
+        return window.location.href = "https://metamask.io";
+    }
     button && (button.innerHTML = '<spa class="loaderMinimino"></span>');
     button && (button.className = '');
     await window.loadContext();
@@ -30,6 +33,9 @@ window.checkTreasureBalance = async function checkTreasureBalance() {
 
 window.loadAddressBarParam = async function loadAddressBarParam() {
     if(window.addressBarParams.toggle) {
+        if(!window.ethereum) {
+            return window.location.href = "https://metamask.io";
+        }
         window.choosePage();
     }
 };
