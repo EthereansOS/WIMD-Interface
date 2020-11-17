@@ -36,20 +36,20 @@ Four are COMMON (green).
 
 Common cards can be farmed by adding liquidity to the Uniswap pairs "buidl-ETH", "arte-ETH" and "UniFi-ETH". You can also buy them on the market:
 
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0x7C23Ac2E8DA915d4f422CF710f4767FAa0c332fa">Uniswap: Magician Cat (tot supply: 10,000)</a><br>
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0xE63983b5FAdE429eC052d1b365826C4Bc5fCB198">
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0x7C23Ac2E8DA915d4f422CF710f4767FAa0c332fa">Uniswap: Magician Cat (tot supply: 10,000)</a><br>
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0xE63983b5FAdE429eC052d1b365826C4Bc5fCB198">
 Uniswap: Penguin Fancy Shoes (tot supply: 10,000)</a><br>
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0xc2c5667f69E881C83Fc4692f7A08a22370B4cc41">
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0xc2c5667f69E881C83Fc4692f7A08a22370B4cc41">
 Uniswap: Unicorn Cat (tot supply: 9,975)</a><br>
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0xA70C8667cCFB63D6b98C2A050c94b7Bf2085dC55">
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0xA70C8667cCFB63D6b98C2A050c94b7Bf2085dC55">
 Uniswap: Magician Unicorn (tot supply: 10,000)</a><br>
 
 <a href="https://opensea.io/assets/where-is-my-dragon">Collection on OpenSea</a>
 
 Two are RARE (blue). 
 
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0x9b16e70797276Ae1bE23874961D1E6a9698e1EC6">Uniswap: Penguin Unicorn (tot supply: 100)</a><br>
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0x88B95322b5E93B891D83031F2f55Ca238D5e6417">
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0x9b16e70797276Ae1bE23874961D1E6a9698e1EC6">Uniswap: Penguin Unicorn (tot supply: 100)</a><br>
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0x88B95322b5E93B891D83031F2f55Ca238D5e6417">
 Uniswap: Unicorn Ghost (tot supply: 50)</a><br>
 
 <a href="https://opensea.io/assets/where-is-my-dragon">Collection on OpenSea</a>
@@ -60,7 +60,7 @@ Rare cards can be crafted here:
 
 One is LEGENDARY! (purple) 
 
-<a href="https://swap.whereismydragon.com/#/swap?inputCurrency=0x22e6559F495F97Af51fF56719CdFF80F65a0B93A"> Uniswap: Unicorn Dragon</a> <br>
+<a href="https://swap.ethitem.com/#/swap?inputCurrency=0x22e6559F495F97Af51fF56719CdFF80F65a0B93A"> Uniswap: Unicorn Dragon</a> <br>
 
 Most Legendary cards can be crafted. It is very difficult, but possible. You can try here:
 
