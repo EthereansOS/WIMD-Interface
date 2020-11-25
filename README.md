@@ -8,8 +8,6 @@ WIMD Website: https://whereismydragon.com
 
 WIMD Cards farming: https://whereismydragon.com/?toggle=farming
 
-WIMD Uniswap custom Front-end: https://swap.whereismydragon.com
-
 WIMD Uniswap Code: https://github.com/b-u-i-d-l/WIMD-uniswap
 
 WIMD OpenSea Collection: https://opensea.io/assets/where-is-my-dragon
