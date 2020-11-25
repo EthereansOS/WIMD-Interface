@@ -1,20 +1,30 @@
 {
-    "Farming: Season One" : {
+    "Farming: Season Two - EP 1" : {
         "953680776037830019376762634780957885111415987285" : {
             "token" : "Magician Unicorn",
-            "stakingAddresses" : ["0x323094ad74933163e0E5EcFc785a84b6D024c83B"]
+            "stakingAddresses" : ["0x5864Bfcd30fe069143DDbeDBF9443FD29f2102e6"]
         },
         "708710380818572902317750208759935671347114619642" : {
             "token" : "Magician Cat",
-            "stakingAddresses" : []
+            "stakingAddresses" : ["0xDc79772e3795dd8D00E2DE4e28ffDc731f84c678"]
+        }
+    },
+    "Farming: Season Two - EP 2" : {
+        "953680776037830019376762634780957885111415987285" : {
+            "token" : "Magician Unicorn",
+            "stakingAddresses" : ["0x7A561368a4283c3a28D4dD96738FC9c7d182C4Eb"]
+        },
+        "708710380818572902317750208759935671347114619642" : {
+            "token" : "Magician Cat",
+            "stakingAddresses" : ["0xDff065aB06A5eE1B75946227beb97E3df577c4A4"]
         },
         "1314350493399825849440291684746997404115301872024" : {
             "token" : "Penguin Fancy Shoes",
-            "stakingAddresses" : ["0x349BcF1206FAeD89aFb850A01eF75673547B08eb"]
+            "stakingAddresses" : ["0x81f32855499688484C80E4375c83d91E194CF305"]
         },
         "1111946385153737223689257886665575715568350448705" : {
             "token" : "Unicorn Cat",
-            "stakingAddresses" : ["0x9249896dFAff96A22Db9a4e682EEaCbd186581c4"]
+            "stakingAddresses" : ["0xe660D84dF470b94890978db24e6BFf0468f30da3"]
         }
     },
     "Farming: Long Term Season" : {
@@ -33,6 +43,24 @@
         "1111946385153737223689257886665575715568350448705" : {
             "token" : "Unicorn Cat",
             "stakingAddresses" : []
+        }
+    },
+    "Farming: Season One (Ended)" : {
+        "953680776037830019376762634780957885111415987285" : {
+            "token" : "Magician Unicorn",
+            "stakingAddresses" : ["0x323094ad74933163e0E5EcFc785a84b6D024c83B"]
+        },
+        "708710380818572902317750208759935671347114619642" : {
+            "token" : "Magician Cat",
+            "stakingAddresses" : []
+        },
+        "1314350493399825849440291684746997404115301872024" : {
+            "token" : "Penguin Fancy Shoes",
+            "stakingAddresses" : ["0x349BcF1206FAeD89aFb850A01eF75673547B08eb"]
+        },
+        "1111946385153737223689257886665575715568350448705" : {
+            "token" : "Unicorn Cat",
+            "stakingAddresses" : ["0x9249896dFAff96A22Db9a4e682EEaCbd186581c4"]
         }
     }
 }

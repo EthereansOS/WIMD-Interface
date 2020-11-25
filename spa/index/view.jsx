@@ -97,7 +97,7 @@ var Index = React.createClass({
                 <a className="navLink BrandizedS" target="_blank" href={window.context.openSeaCollectionLinkTemplate.format(this.state && this.state.collectionName)}>OpenSea</a>
                 {window.ethereum && !window.walletAddress && <a className="connect Brandized" href="javascript:;" onClick={() => window.ethereum.enable()}>Connect</a>}
                 {props.items && props.items.length > 0 && <a className="navLink BrandizedS SPECIALITY" href="javascript:;" onClick={this.toggleFarming}>Farming</a>}
-                <span className="navThings BrandizedS">Treasure: {window.formatMoney(window.balanceOf, 1)} ETH</span>
+                <a target="_blank" href="https://etherscan.io/tokenHoldings?a=0x32c87193C2cC9961F2283FcA3ca11A483d8E426B" className="navThings BrandizedS">Treasure: {window.formatMoney(window.balanceOf, 1)} ETH</a>
                 {window.walletAddress && <a className="connect BrandizedS" target="_blank" href={window.getNetworkElement("etherscanURL") + "address/" + window.walletAddress}>{window.shortenWord(window.walletAddress, 15)}</a>}
             </header>
             {(!props.items || props.items.length === 0) && <InlineLoader />}
