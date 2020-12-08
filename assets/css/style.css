@@ -102,7 +102,7 @@ header .connect {float: right; margin-right: 5%; font-size: 18px; margin-top: 30
 .farming .collection .singleCollCard .collCard {width: 50px;}
 .farming .collection .singleCollCard .collCard img {width: 50px;}
 .farming  .UniPriceBro {font-size: 16px; width: 100%; vertical-align: middle; text-align: center; padding: 5px; font-weight: bold; color: #d2bff9;}
-.farming .unibtn {font-size: 14px; width: 50%; border-radius: 12px; vertical-align: middle;display: inline-block;margin: 10px auto;background-color: #d2bff9;padding: 5px;color: #ffffff;text-decoration: none;}
+.farming .unibtn {font-size: 11px; font-weight: bold;border-radius: 12px;vertical-align: middle;display: inline-block;margin: 6px 3px;background-color: #d2bff9;padding: 2px 8px;color: #ffffff;text-decoration: none;}
 .FarmingSeason {width: 100%; display: inline-block;}
 .FarmingSeason h2 a {text-decoration: underline !important; font-size: 18px;}
 .FarmingTier {background-color: #f9f6ff; margin: 10px auto; width: 700px; padding: 20px; border-radius: 20px; text-align: left;}

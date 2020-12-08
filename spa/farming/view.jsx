@@ -24,6 +24,8 @@ var Farming = React.createClass({
                     {this.state && this.state.items && this.state.items[i] && <span className="UniPriceBro">$ {window.formatMoney(this.state.items[i].priceInDollars, 1)}</span>}
                     <br></br>
                     <a className="unibtn" href={window.context.uniswapSpawUrlTemplate.format(it.erc20Wrapper)} target="_blank">&#129412;swap</a>
+                    <a className="unibtn" href={window.context.uniSwapInfoURL.format(it.erc20Wrapper)} target="_blank">&#129412;info</a>
+                    <a className="unibtn Opns" href={window.context.openSeaCollectionLinkTemplate.format(it.erc20Wrapper)} target="_blank">&#129412;opensea</a>
                 </section>)}
                 <section className="Delimitator"></section>
                 {(!this.state || !this.state.stakingContracts) && <InlineLoader />}

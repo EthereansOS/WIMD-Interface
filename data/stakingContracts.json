@@ -1,5 +1,19 @@
 {
-    "Farming: Season Two - EP 1" : {
+    "Farming: Season Three" : {
+        "953680776037830019376762634780957885111415987285" : {
+            "token" : "Magician Unicorn",
+            "stakingAddresses" : ["0x4d50d4908632e4cc46B316b9478df18dA2D5b47E"]
+        },
+        "708710380818572902317750208759935671347114619642" : {
+            "token" : "Magician Cat",
+            "stakingAddresses" : ["0x39E11a5bb3553924eC43DA32d66133a6da650479"]
+        },
+        "1314350493399825849440291684746997404115301872024" : {
+            "token" : "Penguin Fancy Shoes",
+            "stakingAddresses" : ["0x2133424d98F7bd2dC0a6D6e3316d8EBAf2fb8fB7"]
+        }
+    },
+    "Farming: Season Two - EP 1 (End Soon)" : {
         "953680776037830019376762634780957885111415987285" : {
             "token" : "Magician Unicorn",
             "stakingAddresses" : ["0x5864Bfcd30fe069143DDbeDBF9443FD29f2102e6"]
@@ -9,7 +23,7 @@
             "stakingAddresses" : ["0xDc79772e3795dd8D00E2DE4e28ffDc731f84c678"]
         }
     },
-    "Farming: Season Two - EP 2" : {
+    "Farming: Season Two - EP 2 (End Soon)" : {
         "953680776037830019376762634780957885111415987285" : {
             "token" : "Magician Unicorn",
             "stakingAddresses" : ["0x7A561368a4283c3a28D4dD96738FC9c7d182C4Eb"]
@@ -25,24 +39,6 @@
         "1111946385153737223689257886665575715568350448705" : {
             "token" : "Unicorn Cat",
             "stakingAddresses" : ["0xe660D84dF470b94890978db24e6BFf0468f30da3"]
-        }
-    },
-    "Farming: Long Term Season" : {
-        "953680776037830019376762634780957885111415987285" : {
-            "token" : "Magician Unicorn",
-            "stakingAddresses" : ["0xC2Ebd5Ff7d2B6c4874329939330F8104aB6ABF66"]
-        },
-        "708710380818572902317750208759935671347114619642" : {
-            "token" : "Magician Cat",
-            "stakingAddresses" : ["0xbd439b1EdDC16594a1eB44952CCe12DB728D048b", "0x00212AeebB678f138a2C79638180B2522200BEfa"]
-        },
-        "1314350493399825849440291684746997404115301872024" : {
-            "token" : "Penguin Fancy Shoes",
-            "stakingAddresses" : ["0x80b03932039D70B42CF1a156B8ca721bA5082FAf"]
-        },
-        "1111946385153737223689257886665575715568350448705" : {
-            "token" : "Unicorn Cat",
-            "stakingAddresses" : []
         }
     },
     "Farming: Season One (Ended)" : {

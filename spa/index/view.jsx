@@ -92,7 +92,7 @@ var Index = React.createClass({
             <header>
                 <a target="_blank" href="/" className="brand"><img src="assets/img/logo.png"/></a>
                 <a target="_blank" href="https://github.com/b-u-i-d-l/Where-Is-My-Dragon" className="navLink BrandizedS">Rules</a>
-                <a className="navLink BrandizedS">ITEM</a>
+                <a className="navLink BrandizedS" target="_blank" href="https://ethitem.com/?collection=0xb6ab68A44eCc9fb2244AaB83eB2f6dbA54205EBf">ITEM</a>
                 <a className="navLink BrandizedS" target="_blank" href="https://bafybeidohofcst2oxulj75mxdogz77ky7ldhvz27pcqx7htyatuazrcvwi.ipfs.dweb.link/">Uniswap</a>
                 <a className="navLink BrandizedS" target="_blank" href={window.context.openSeaCollectionLinkTemplate.format(this.state && this.state.collectionName)}>OpenSea</a>
                 {window.ethereum && !window.walletAddress && <a className="connect Brandized" href="javascript:;" onClick={() => window.ethereum.enable()}>Connect</a>}
