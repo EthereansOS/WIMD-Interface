@@ -83,34 +83,6 @@ The exact amount and types of cards required to craft is a secret!
 
 3 - Think about the transaction... you have to reach the right block.
 
-## How to FARM COMMON cards
-
-You can Farm WIMD Common Cards in by:
-
-### SEASON 1 <a href="https://etherscan.io/block/countdown/11246089">(Ending block n. 11246089)</a>
-
-- Earn 1 Penguin Fancy Shoes for every 10 BUIDL locked in the Uniswap V2 pair BUIDL - ETH for 1 month <br>
-(available reward 1,000 Penguin Fancy Shoes) | <a href="https://dapp.dfohub.com/?staking=0x349BcF1206FAeD89aFb850A01eF75673547B08eb">FARM LINK</a>
-
-- Earn 1 Unicorn Cat for every 10 UniFi locked in the Uniswap V2 pair UniFi - ETH for 1 month <br>
-(available reward 1,000 Unicorn Cat) | <a href="https://dapp.dfohub.com/?staking=0x9249896dFAff96A22Db9a4e682EEaCbd186581c4">FARM LINK</a>
-
-- Earn 1 Magician Unicorn for every 10 ARTE locked in the Uniswap V2 pair ARTE - ETH for 1 month <br>
-(available reward 1,000 Unicorn Cat) | <a href="https://dapp.dfohub.com/?staking=0x323094ad74933163e0E5EcFc785a84b6D024c83B">FARM LINK</a>
-
-### Long Term SEASON  <a href="https://etherscan.io/block/countdown/12946089">(Ending block n. 12946089)</a>
-
-- Earn 2 Penguin Fancy Shoes for every Unicorn Cat locked in the Uniswap V2 pair Unicorn Cat - ETH for 9 months <br>
-(available reward 2,000 Penguin Fancy Shoes) | <a href="https://dapp.dfohub.com/?staking=0x80b03932039D70B42CF1a156B8ca721bA5082FAf">FARM LINK</a>
-
-- Earn 2 Magician Cat for every Penguin Fancy Shoes locked in the Uniswap V2 pair Penguin Fancy Shoes - ETH for 1 year <br>
-(available reward 2,000 Magician Cat) | <a href="https://dapp.dfohub.com/?staking=0x00212AeebB678f138a2C79638180B2522200BEfa">FARM LINK</a>
-
-- Earn 2 Magician Unicorn for every Magician Cat locked in the Uniswap V2 pair Magician Cat - ETH for 9 months <br>
-(available reward 2,000 Magician Unicorn) | <a href="https://dapp.dfohub.com/?staking=0xC2Ebd5Ff7d2B6c4874329939330F8104aB6ABF66">FARM LINK</a>
-
-- Earn 2 Magician Cat for every Magician Unicorn locked in the Uniswap V2 pair Magician Unicorn - ETH for 9 months <br>
-(available reward 2,000 Magician Cat) | <a href="https://dapp.dfohub.com/?staking=0xbd439b1EdDC16594a1eB44952CCe12DB728D048b">FARM LINK</a>
 
 ## Rare and Legendary cards
 
