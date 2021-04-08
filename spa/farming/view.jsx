@@ -27,6 +27,7 @@ var Farming = React.createClass({
                     <a className="unibtn" href={window.context.uniSwapInfoURL.format(it.erc20Wrapper)} target="_blank">&#129412;info</a>
                     <a className="unibtn Opns" href={window.context.openSeaItemLinkTemplate.format(window.whereIsMyDragonEthItem.options.address, it.key)} target="_blank">&#129412;opensea</a>
                 </section>)}
+                {/* 
                 <section className="Delimitator"></section>
                 {(!this.state || !this.state.stakingContracts) && <InlineLoader />}
                 {this.state && this.state.stakingContracts && Object.entries(this.state.stakingContracts).map(seasonEntry => {
@@ -57,7 +58,7 @@ var Farming = React.createClass({
                             });
                         })}
                     </section>);
-                })}
+                })}*/}
             </section>
         </section>);
     }
