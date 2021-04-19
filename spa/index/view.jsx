@@ -92,12 +92,10 @@ var Index = React.createClass({
             <header>
                 <a target="_blank" href="/" className="brand"><img src="assets/img/logo.png"/></a>
                 <a target="_blank" href="https://ethos.eth.link/wimd.html" className="navLink BrandizedS">Rules</a>
-                {props.items && props.items.length > 0 && <a className="navLink BrandizedS SPECIALITY" href="javascript:;" onClick={this.toggleFarming}>Card Bazaar</a>}
-                <a className="navLink BrandizedS" target="_blank" href="https://swap.item.eth.link">Swap</a>
-                <a className="navLink BrandizedS" target="_blank" href={window.context.openSeaCollectionLinkTemplate.format(this.state && this.state.collectionName)}>OpenSea</a>
+                {props.items && props.items.length > 0 && <a className="navLink BrandizedS SPECIALITY" href="javascript:;" onClick={this.toggleFarming}>Swap, Buy & Farm Cards</a>}
                 {window.ethereum && !window.walletAddress && <a className="connect Brandized" href="javascript:;" onClick={() => window.ethereum.enable()}>Connect</a>}
                 <a target="_blank" href="https://etherscan.io/tokenHoldings?a=0x32c87193C2cC9961F2283FcA3ca11A483d8E426B" className="navThings BrandizedS">Treasure: {window.formatMoney(window.balanceOf, 1)} ETH</a>
-                <a className="navLink BrandizedS" target="_blank" href="https://ethitem.com/?collection=0xb6ab68A44eCc9fb2244AaB83eB2f6dbA54205EBf">ITEMS Info</a>
+                <a className="navLink BrandizedS" target="_blank" href="https://item.eth.link/?collection=0xb6ab68A44eCc9fb2244AaB83eB2f6dbA54205EBf">Collection Info</a>
                 {window.walletAddress && <a className="connect BrandizedS" target="_blank" href={window.getNetworkElement("etherscanURL") + "address/" + window.walletAddress}>{window.shortenWord(window.walletAddress, 15)}</a>}
             </header>
             {(!props.items || props.items.length === 0) && <InlineLoader />}

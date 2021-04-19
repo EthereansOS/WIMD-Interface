@@ -25,7 +25,7 @@
     "openSeaCollectionLinkTemplate" : "https://opensea.io/assets/{0}",
     "stakingUrlTemplate" : "https://dapp.dfohub.com?staking={0}",
     "ethItemLinkTemplate" : "",
-    "uniswapSpawUrlTemplate" : "https://swap.ethitem.com/#/swap?inputCurrency={0}",
+    "uniswapSpawUrlTemplate" : "https://swap.item.eth.link/#/swap?inputCurrency={0}",
     "uniSwapInfoURL" : "https://uniswap.info/token/{0}",
     "keyUpTimeoutInterval" : 550,
     "unselectable" : ["199242316350403115624675989599876480538394016058"],

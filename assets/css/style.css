@@ -111,8 +111,11 @@ header .connect {float: right; margin-right: 5%; font-size: 18px; margin-top: 30
 .FarmingTierDeal {width: 650px; display: inline-block; margin-left: 20px; vertical-align: middle;}
 .FarmingTierDeal p {width: 500px;color: #6e6e6e; vertical-align: middle;}
 .GoToFarm {background-color: #a3e5ff; padding: 10px; color: #ffffff; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; margin-left: 10px; float: right; margin-top: 20px;}
-
-
+.CardsBigview .collCard img {width: 100px !important;}
+.CardsBigview .collCard {width: 100px !important;}
+.CardsBigview .cardInfo {width: 100px !important;}
+.CardsBigview {width: 240px !important;}
+.CardsBigviewInfo {width: 120px; display: inline-block;}
 
 
 @media only screen and (max-device-width: 750px) {
