@@ -1594,7 +1594,7 @@ window.eliminateFloatingFinalZeroes = function eliminateFloatingFinalZeroes(valu
 function getPage() {
     var location;
     try {
-        var search = {};
+        var search = window.addressBarParams || {};
         var splits = window.location.search.split('?');
         for (var z in splits) {
             var split = splits[z].trim();

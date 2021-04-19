@@ -23,11 +23,32 @@ var Farming = React.createClass({
                     <CardInfo card={it} clean hideBalance />
                     <div className="CardsBigviewInfo">
                         {this.state && this.state.items && this.state.items[i] && <p className="UniPriceBro">$ {window.formatMoney(this.state.items[i].priceInDollars, 1)}</p>}
-                        <a className="unibtn" href={window.context.uniswapSpawUrlTemplate.format(it.erc20Wrapper)} target="_blank">&#129412;swap</a>
-                        <a className="unibtn" href={window.context.uniSwapInfoURL.format(it.erc20Wrapper)} target="_blank">&#129412;info</a>
-                        <a className="unibtn Opns" href={window.context.openSeaItemLinkTemplate.format(window.whereIsMyDragonEthItem.options.address, it.key)} target="_blank">&#129412;opensea</a>
+                        <a className="unibtn" href={window.context.uniSwapInfoURL.format(it.erc20Wrapper)} target="_blank">Liquidity</a>
+                        <a className="unibtn" href={window.context.uniswapSpawUrlTemplate.format(it.erc20Wrapper)} target="_blank">Swap</a>
+                        <a className="unibtn Opns" href={window.context.openSeaItemLinkTemplate.format(window.whereIsMyDragonEthItem.options.address, it.key)} target="_blank">OpenSea</a>
+                        <a className="unibtn" href={window.context.ethItemLinkTemplate.format(it.erc20Wrapper)} target="_blank">Info</a>
                     </div>
                 </section>)}
+                <section className="Delimitator"></section>
+                <h2 className="BrandizedS">Decks</h2>
+                <section className="collection DeckBigview">
+                    <section className="singleCollCard cardInfo">
+                        <figure className="collCard">
+                            <img src="//ipfs.io/ipfs/QmbUYRhM8TKGm7iD9mLgSVC5fcToeXaDdk8ntz6yDMJnp1"/>
+                        </figure>
+                    </section>
+                    <div className="CardsBigviewInfoP">
+                        <p>A collection of the four common cards of the ITEMS based card game "Where Is My Dragon". Each unit of this deck contains 1 Penguin Fancy Shoes, 1 Unicorn Cat, 1 Magician Unicorn and 1 Magician Cat</p>
+                    </div>
+                    <div className="CardsBigviewInfo">
+                        <a className="unibtn" href="https://info.uniswap.org/token/0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Liquidity</a>
+                        <a className="unibtn" href="https://swap.item.eth.link/#/swap?outputCurrency=0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Swap</a>
+                        <a className="unibtn Opns" href="https://opensea.io/assets/0x5a6EdeeE783A17AFa9e40f6a03B6C93Fabc5AdC1/1195241872894617222008635817406839094575782056503" target="_blank">OpenSea</a>
+                        <a className="unibtn" href="https://item.eth.link/?interoperable=0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Info</a>
+                    </div>
+                </section>
+                <section className="Delimitator"></section>
+                <h2 className="BrandizedS">Farming (coming Soon)</h2>
                 {/* 
                 <section className="Delimitator"></section>
                 {(!this.state || !this.state.stakingContracts) && <InlineLoader />}
