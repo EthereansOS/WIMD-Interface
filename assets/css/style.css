@@ -37,7 +37,7 @@ section, article, label {display: inline-block;}
 .Intro .Explainer .secret h4 {font-weight: bolder; font-size: 25px; width: 100%; color: #6e6e6e; text-align: center; display: inline-block;vertical-align: middle;}
 .Intro .Explainer p {font-weight: normal; font-size: 17px; margin: 20px auto; width: 70%; color: #6e6e6e; text-align: left; line-height: 1.3;}
 .Intro .Explainer .secret p {font-weight: normal; font-size: 17px; width: 100%; color: #6e6e6e; text-align: center; line-height: 1.3; margin: 0;}
-
+.farmrewardn {font-size: 12px; font-weight: bold;}
 .Intro .ExplainerL {width: 950px; text-align: center; display: block; margin: 40px auto;}
 .Intro .ExplainerS {width: 290px; text-align: left; display: inline-block; vertical-align: top;margin: 40px auto;}
 .Intro .ExplainerS article {width: 80%;}
@@ -121,9 +121,21 @@ header .connect {float: right; margin-right: 5%; font-size: 18px; margin-top: 30
 .DeckBigview .collCard {width: 300px !important;}
 .DeckBigview .cardInfo {width: 300px !important;}
 .DeckBigview {width: 900px !important; height: auto !important;}
+.FarmSection {width: 100%; display: block;}
 .CardsBigviewInfoP {width: 270px; display: inline-block; margin: auto 30px; vertical-align: middle;}
 .CardsBigviewInfoP p {font-size: 14px; color: #6e6e6e; text-align: left; line-height: 1.3;}
-
+.FarmSectionSingle {width: 650px; display: block; margin: 20px auto; padding: 25px; border: 2px solid #d2bff9; border-radius: 12px;}
+.FarmSectionSingle > figure {width: 100px; height: auto; display: inline-block;}
+.FarmSectionSingle > figure img {width: 100px; height: auto;}
+.FarmSectionSingle .FarmInfoSec {width: 500px; margin-left: 20px; text-align: left; vertical-align: top; display: inline-block;}
+.FarmSectionSingle .FarmInfoSec h6 {font-size: 20px; font-weight: bold; color: #9048fd; margin: 10px auto;}
+.FarmPoolInfo {width: 100%; display: block; margin: 10px auto; text-align: left;}
+.FarmPoolInfo p {font-size: 13px;}
+.FarmPools {width: 100%; display: inline-block; margin: 3px auto;}
+.FarmPools figure {width: 51px; display: inline-block; margin: 10px 10px;vertical-align: middle;}
+.FarmPools figure img {width: 30px; min-height:30px; max-height:30px; display: inline-block; vertical-align: middle;}
+.FarmPools figure .SecImg {margin-left: -10px;}
+.FarmButton  {float: right;background-color: #9048fd; color: #ffffff; padding: 8px 14px; display: inline-block; margin: auto 10px; vertical-align: middle; font-size: 16px; font-weight: bold; border-radius: 8px; text-decoration: none; border-radius: 8px;}
 
 @media only screen and (max-device-width: 750px) {
    .Intro .Title, .Explainer, .ExplainerL, .ExplainerS, footer section {width: 90% !important; text-align: center !important;}

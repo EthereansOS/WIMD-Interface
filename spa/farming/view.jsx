@@ -48,39 +48,164 @@ var Farming = React.createClass({
                     </div>
                 </section>
                 <section className="Delimitator"></section>
-                <h2 className="BrandizedS">Farming (coming Soon)</h2>
-                {/* 
-                <section className="Delimitator"></section>
-                {(!this.state || !this.state.stakingContracts) && <InlineLoader />}
-                {this.state && this.state.stakingContracts && Object.entries(this.state.stakingContracts).map(seasonEntry => {
-                    var seasonKey = seasonEntry[0];
-                    var season = seasonEntry[1];
-                    var endBlock = _this.getFirstEndBlock(season);
-                    return (<section key={seasonKey} className="FarmingSeason">
-                        <h2 className="BrandizedS">{seasonKey} <a target="_blank" href={`${window.getNetworkElement("etherscanURL")}block/${endBlock}`}>(Ending block n. {endBlock})</a></h2>
-                        {Object.entries(season).filter(it => it[1].stakingData && it[1].stakingData.stakingData && it[1].stakingData.stakingData.length > 0).map(tokenEntry => {
-                            var tokenKey = tokenEntry[0];
-                            var tokenValue = tokenEntry[1];
-                            var stakingDatas = tokenValue.stakingData.stakingData;
-                            return stakingDatas.map(stakingData => {
-                                var amountFor1 = 100 / stakingData.tiers[0].percentage;
-                                if(!stakingData.rewardToken || !stakingData.mainToken) {
-                                    return;
-                                }
-                                return (<section key={tokenKey} className="FarmingTier">
-                                    <img src={window.formatLink(stakingData.rewardToken.logo || stakingData.rewardToken.logoURI)} />
-                                    <p>Earn 1 {stakingData.rewardToken.name} Card for every:</p>
-                                    <a className="GoToFarm" target="_blank" href={window.context.stakingUrlTemplate.format(stakingData.stakingManager.options.address)}>FARM</a>
-                                    <br></br>
-                                    <section className="FarmingTierDeal">
-                                        <img src={window.formatLink(stakingData.mainToken.logo || stakingData.mainToken.logoURI)} />
-                                        <p>{window.formatMoney(amountFor1, 2)} {stakingData.mainToken.symbol} locked in the Uniswap V2 pair {stakingData.mainToken.symbol} - {stakingData.pairs[0].symbol} {stakingData.tiers[0].tierKey} (Available: {window.fromDecimals(stakingData.tiers[0].remainingToStake, stakingData.mainToken.decimals)})</p>
+                <h2 className="BrandizedS">Farming</h2>
+                <section className="FarmSection">
+                    <section className="FarmSectionSingle">
+                        <figure>
+                            <img src="assets/img/cardImages/708710380818572902317750208759935671347114619642.png"></img>
+                        </figure>
+                        <section className="FarmInfoSec">
+                                <h6>Farm Magician Cat</h6>
+                                <section className="FarmPoolInfo">
+                                    <p>Rewarded Uniswap Pools:</p>
+                                    <section className="FarmPools">
+                                        <figure>
+                                            <img src="assets/img/cardImages/708710380818572902317750208759935671347114619642.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>                                   
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x34612903Db071e888a4dADcaA416d3EE263a87b9/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmXjPmCChUCNeMSoRpSb3wKUARxbucZSQ3W5sZwMf749RX"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmXjPmCChUCNeMSoRpSb3wKUARxbucZSQ3W5sZwMf749RX"></img>
+                                            <img className="SecImg" src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmbUYRhM8TKGm7iD9mLgSVC5fcToeXaDdk8ntz6yDMJnp1"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
                                     </section>
-                                </section>);
-                            });
-                        })}
-                    </section>);
-                })}*/}
+                                </section>
+                            <aside>
+                                <p className="farmrewardn">Daily Reward: 33 <a className="Brandized" target="_blank" href="https://item.eth.link/?interoperable=0x7C23Ac2E8DA915d4f422CF710f4767FAa0c332fa">Magician Cat</a></p>
+                                <a className="FarmButton" href="https://covenants.eth.link/#/farm/dapp/0xb84d838584B7A7F924ed422e7d256c80E03D92cf" target="_blank">Farm</a>
+                            </aside>
+                        </section>
+                    </section>
+                    <section className="FarmSectionSingle">
+                        <figure>
+                            <img src="assets/img/cardImages/1314350493399825849440291684746997404115301872024.png"></img>
+                        </figure>
+                        <section className="FarmInfoSec">
+                                <h6>Farm Penguin Fancy Shoes</h6>
+                                <section className="FarmPoolInfo">
+                                    <p>Rewarded Uniswap Pools:</p>
+                                    <section className="FarmPools">
+                                        <figure>
+                                            <img src="assets/img/cardImages/1314350493399825849440291684746997404115301872024.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>                                   
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x9E78b8274e1D6a76a0dBbf90418894DF27cBCEb5/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="assets/img/cardImages/885404311393007699790400512240499286361791930054.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmXjPmCChUCNeMSoRpSb3wKUARxbucZSQ3W5sZwMf749RX"></img>
+                                            <img className="SecImg" src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmbUYRhM8TKGm7iD9mLgSVC5fcToeXaDdk8ntz6yDMJnp1"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                    </section>
+                                </section>
+                            <aside>
+                                <p className="farmrewardn">Daily Reward: 33 <a className="Brandized" target="_blank" href="https://item.eth.link/?interoperable=0xE63983b5FAdE429eC052d1b365826C4Bc5fCB198">Penguin Fancy Shoes</a></p>
+                                <a className="FarmButton" href="https://covenants.eth.link/#/farm/dapp/0xfF4E8691467AF6d4D5e40F6390B05f0973B83a2e" target="_blank">Farm</a>
+                            </aside>
+                        </section>
+                        
+                    </section>
+                    <section className="FarmSectionSingle">
+                        <figure>
+                            <img src="assets/img/cardImages/953680776037830019376762634780957885111415987285.png"></img>
+                        </figure>
+                        <section className="FarmInfoSec">
+                                <h6>Magician Unicorn</h6>
+                                <section className="FarmPoolInfo">
+                                    <p>Rewarded Uniswap Pools:</p>
+                                    <section className="FarmPools">
+                                        <figure>
+                                            <img src="assets/img/cardImages/953680776037830019376762634780957885111415987285.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>                                   
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7b123f53421b1bF8533339BFBdc7C98aA94163db/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="assets/img/cardImages/780555624824904431919937819844714503576378827799.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmXjPmCChUCNeMSoRpSb3wKUARxbucZSQ3W5sZwMf749RX"></img>
+                                            <img className="SecImg" src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmbUYRhM8TKGm7iD9mLgSVC5fcToeXaDdk8ntz6yDMJnp1"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                    </section>
+                                </section>
+                            <aside>
+                                <p className="farmrewardn">Daily Reward: 33 <a className="Brandized" target="_blank" href="https://item.eth.link/?interoperable=0xA70C8667cCFB63D6b98C2A050c94b7Bf2085dC55">Magician Unicorn</a></p>
+                                <a className="FarmButton" href="https://covenants.eth.link/#/farm/dapp/0xC34ed7B21D2Ab2a7b4521f301953977db560B6EE" target="_blank">Farm</a>
+                            </aside>
+                        </section>
+                        
+                    </section>
+                    <section className="FarmSectionSingle">
+                        <figure>
+                            <img src="assets/img/cardImages/1111946385153737223689257886665575715568350448705.png"></img>
+                        </figure>
+                        <section className="FarmInfoSec">
+                                <h6>Unicorn Cat</h6>
+                                <section className="FarmPoolInfo">
+                                    <p>Rewarded Uniswap Pools:</p>
+                                    <section className="FarmPools">
+                                        <figure>
+                                            <img src="assets/img/cardImages/1111946385153737223689257886665575715568350448705.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="assets/img/cardImages/199242316350403115624675989599876480538394016058.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>                                   
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7b123f53421b1bF8533339BFBdc7C98aA94163db/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x9E78b8274e1D6a76a0dBbf90418894DF27cBCEb5/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x34612903Db071e888a4dADcaA416d3EE263a87b9/logo.png"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                        <figure>
+                                            <img src="https://ipfs.io/ipfs/QmbUYRhM8TKGm7iD9mLgSVC5fcToeXaDdk8ntz6yDMJnp1"></img>
+                                            <img className="SecImg" src="assets/img/ethr.png"></img>
+                                        </figure>
+                                    </section>
+                                </section>
+                            <aside>
+                                <p className="farmrewardn">Daily Reward: 33 <a className="Brandized" target="_blank" href="https://item.eth.link/?interoperable=0xc2c5667f69E881C83Fc4692f7A08a22370B4cc41">Unicorn Cat</a></p>
+                                <a className="FarmButton" href="https://covenants.eth.link/#/farm/dapp/0x00898f652934EfF850886289a94D41CF9457e7Af" target="_blank">Farm</a>
+                            </aside>
+                        </section>
+                        
+                    </section>
+                </section>
             </section>
         </section>);
     }
