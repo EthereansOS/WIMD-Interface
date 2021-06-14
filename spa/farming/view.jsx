@@ -41,7 +41,7 @@ var Farming = React.createClass({
                         <p>A collection of the four common cards of the ITEMS based card game "Where Is My Dragon". Each unit of this deck contains 1 Penguin Fancy Shoes, 1 Unicorn Cat, 1 Magician Unicorn and 1 Magician Cat</p>
                     </div>
                     <div className="CardsBigviewInfo">
-                        <a className="unibtn" href="https://info.uniswap.org/token/0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Liquidity</a>
+                        <a className="unibtn" href="https://v2.info.uniswap.org/token/0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Liquidity</a>
                         <a className="unibtn" href="https://swap.item.eth.link/#/swap?outputCurrency=0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Swap</a>
                         <a className="unibtn Opns" href="https://opensea.io/assets/0x5a6EdeeE783A17AFa9e40f6a03B6C93Fabc5AdC1/1195241872894617222008635817406839094575782056503" target="_blank">OpenSea</a>
                         <a className="unibtn" href="https://item.eth.link/?interoperable=0xD15c7Fcda27a93b9d4cD3617E09416Ec3aaA5237" target="_blank">Info</a>
