@@ -21,13 +21,13 @@ var Redeem = React.createClass({
         var [bravo, setBravo] = useState("");
         function redeem() {
             setBravo(false);
-            if(amount <= 0) {
-                return alert("Amount must be greater than 0");
-            }
             var bal = parseInt(balance);
             var am = bal;
             if(bal < am) {
                 return alert("Insufficient balance");
+            }
+            if(am <= 0) {
+                return alert("Amount must be greater than 0");
             }
             setRedeeming(true);
             _this.controller.redeem(am).then(setBravo).finally(() => setRedeeming(false)).catch(e => alert(e.message || e));
