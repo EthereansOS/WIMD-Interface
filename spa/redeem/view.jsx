@@ -3,17 +3,6 @@ var Redeem = React.createClass({
         'spa/index/cardInfo.jsx',
         'spa/inlineLoader.jsx'
     ],
-    componentDidMount() {
-        this.controller.loadData();
-    },
-    getFirstEndBlock(item) {
-        var values = Object.values(item);
-        for (var value of values) {
-            if (value.stakingData && value.stakingData.stakingData && value.stakingData.stakingData.length > 0) {
-                return value.stakingData.stakingData[0].endBlock;
-            }
-        }
-    },
     render() {
         var _this = this;
         return (

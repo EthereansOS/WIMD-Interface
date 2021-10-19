@@ -1,4 +1,11 @@
 var ScriptLoader = function() {
+
+    var externalLoaders = [];
+
+    var connectExternalLoader = function connectExternalLoader(externalLoader) {
+        externalLoaders.push(externalLoader);
+    };
+
     var ScriptLoaderInternal = function(data) {
         var context = this
 
@@ -56,14 +63,14 @@ var ScriptLoader = function() {
                 context.log('Error loading style "' + styleToLoad + '".')
                 context.loadStyle()
             }
-            context.log('Loading style ' + link.href)
-            context.m_head.appendChild(link)
+            context.log('Loading style ' + link.href);
+            !document.getElementById('customStyle') && context.m_head.appendChild(link)
+            document.getElementById('customStyle') && context.m_head.insertBefore(link, document.getElementById('customStyle'))
         }
 
         context.loadScript = function() {
             if (context.m_js_files.length === 0) {
-                context.tryCallback()
-                return
+                return context.tryCallback()
             }
             var scriptToLoad = context.m_js_files[0]
             context.m_js_files.splice(0, 1)
@@ -101,12 +108,34 @@ var ScriptLoader = function() {
                 context.loadScript()
             }
             context.log('Loading script "' + script.src + '".')
-            if (script.type === 'text/babel' || context.contains(script.src, '.jsx')) {
-                if (context.tryLoadBabelScript(script) !== false) {
-                    return
-                }
-                script.type = 'text/javascript'
+            var externalLoad = context.tryExternalLoad(script.src);
+            if (externalLoad) {
+                return (context.externalLoads = context.externalLoads || {})[script.src] = context.externalLoads[script.src] || externalLoad.then(function(code) {
+                    if (!code) {
+                        return context.loadScript();
+                    }
+                    var newScript = document.createElement("script");
+                    newScript.type = "text/javascript";
+                    newScript.src = code;
+                    newScript.dataset.src = newScript.dataset.src || script.src;
+                    newScript.onload = function() {
+                        context.log('Loaded script "' + newScript.src + '".')
+                        if (window.scriptsLoaded === undefined) {
+                            window.scriptsLoaded = []
+                        }
+                        var src = newScript.dataset.src || newScript.src;
+                        src && window.scriptsLoaded.push(src.replace(context.baseURL, ""));
+                        context.loadScript()
+                    }
+                    newScript.onerror = function(e) {
+                        console.log(e)
+                        context.log('Error loading script "' + code + '".')
+                        context.loadScript()
+                    }
+                    context.m_scripts.appendChild(newScript);
+                });
             }
+            script.type = 'text/javascript';
             if (script.src === undefined || script.src === null || script.src === '') {
                 script.innerText += '\n//# sourceURL=gen_' + new Date().getTime() + '.jsx'
             }
@@ -122,70 +151,14 @@ var ScriptLoader = function() {
             }
         }
 
-        context.tryLoadBabelScript = function(script) {
-            if (typeof Babel === 'undefined') {
-                return false
-            }
-            var src = script.src || 'gen_' + new Date().getTime() + '.jsx';
-            var babelTransform = function(code) {
-                var newScript = document.createElement('script')
-                newScript.type = 'text/javascript'
-                var transform = Babel.transform(code, {
-                    presets: ['es2015', 'es2015-loose', 'react'],
-                    sourceMaps: true
-                });
-                var evaluation = transform.code;
-                transform.map.file = src;
-                transform.map.sources[0] = src;
-                evaluation += '\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,' + window.Base64.encode(JSON.stringify(transform.map));
-                newScript.src = 'data:text/javascript;charset=utf-8,' + escape(evaluation);
-                newScript.onload = function() {
-                    context.log('Loaded script "' + src + '".')
-                    if (window.scriptsLoaded === undefined) {
-                        window.scriptsLoaded = []
-                    }
-                    if (src !== undefined && src !== null && src !== '') {
-                        window.scriptsLoaded.push(src.replace(context.baseURL, ""))
-                    }
-                    context.loadScript()
-                }
-                newScript.onerror = function(e) {
-                    console.log(e)
-                    context.log('Error loading script "' + src + '".')
-                    context.loadScript()
-                }
-                context.m_scripts.appendChild(newScript);
-            }
-            if (src === undefined || src === null || src === '') {
-                babelTransform(script.innerText)
-            } else {
-                context.xmlRequest(src, babelTransform)
-            }
-        }
-
-        context.xmlRequest = function(src, callback) {
-            var xmlhttp;
-            if (window.XMLHttpRequest) {
-                xmlhttp = new XMLHttpRequest()
-            } else {
-                xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4) {
-                    if (xmlhttp.status == 200 || (xmlhttp.status == 0 && src.indexOf('file:///') !== -1)) {
-                        callback(xmlhttp.responseText)
-                        try {
-                            xmlhttp.abort();
-                        } catch (e) {
-                            console.error(e);
-                        }
-                        return
-                    }
+        context.tryExternalLoad = function tryExternalLoad(location) {
+            for (var externalLoader of externalLoaders) {
+                var promise = externalLoader(location);
+                if (promise) {
+                    return promise;
                 }
             }
-            xmlhttp.open('GET', src + ('?' + (new Date().getTime() - 3) + '=' + (new Date().getTime() + 9)))
-            xmlhttp.send()
-        }
+        };
 
         context.canLoadScript = function(script) {
             var allScripts = document.getElementsByTagName('script')
@@ -217,8 +190,9 @@ var ScriptLoader = function() {
             }
             if (window.scriptsLoaded === undefined) {
                 window.scriptsLoaded = []
+                return true;
             }
-            var found = undefined
+            var found = undefined;
             for (var i in window.scriptsLoaded) {
 
                 if (window.scriptsLoaded[i].replace(context.baseURL, "") === script.src.replace(context.baseURL, "")) {
@@ -293,14 +267,16 @@ var ScriptLoader = function() {
 
         context.tryCallback = function() {
             if (context.m_js_files.length === 0 && context.m_css_files.length === 0 && context.callback) {
-                context.callback()
+                if(!context.externalLoads) {
+                    return setTimeout(context.callback);
+                }
+                Promise.all(Object.values(context.externalLoads)).then(context.callback);
             }
         }
 
         context.load = function() {
             if (context.scripts.length === 0) {
-                context.tryCallback()
-                return
+                return context.tryCallback();
             }
             for (var i = 0; i < context.scripts.length; ++i) {
                 var script = context.scripts[i]
@@ -322,13 +298,7 @@ var ScriptLoader = function() {
         }
 
         context.endsWith = function(str, suffix) {
-            if (str === null || suffix === null)
-                return false
-            try {
-                return str.toLowerCase().indexOf(suffix.toLowerCase(), str.length - suffix.length) !== -1
-            } catch (e) {
-                return false
-            }
+            return str && suffix && str.indexOf(suffix) + suffix.length === str.length;
         }
 
         context.contains = function(str, suffix) {
@@ -354,31 +324,30 @@ var ScriptLoader = function() {
         context.log = function(t) {
             // console.log("ScriptLoader: " + t)
         }
-        
+
         context.removePreloaded = function(scripts) {
-          if((typeof(window.preloadedScripts)).toLowerCase() === 'undefined') {
-            return scripts;
-          }
-          if(scripts === undefined || scripts === null || scripts.length === 0) {
-            return scripts;
-          }
-          var scpts = [];
-          for(var i in scripts) {
-            var script = scripts[i];
-            var found = false;
-            for(var j in window.preloadedScripts) {
-              if(script === window.preloadedScripts[j]) {
-                  found = true;
-                  break;
+            if((typeof(window.preloadedScripts)).toLowerCase() === 'undefined') {
+              return scripts;
+            }
+            if(scripts === undefined || scripts === null || scripts.length === 0) {
+              return scripts;
+            }
+            var scpts = [];
+            for(var i in scripts) {
+              var script = scripts[i];
+              var found = false;
+              for(var j in window.preloadedScripts) {
+                if(script === window.preloadedScripts[j]) {
+                    found = true;
+                    break;
+                }
+              }
+              if(found === false) {
+                scpts.push(script);
               }
             }
-            if(found === false) {
-              scpts.push(script);
-            }
-          }
-          return scpts;
-        };
-
+            return scpts;
+          };
         context.init = function() {
                 if (context.rawData === undefined || context.rawData === null || context.rawData === '' || context.rawData.length === 0) {
                     return
@@ -430,8 +399,9 @@ var ScriptLoader = function() {
     }
 
     return {
-        load: function(data) {
+        load(data) {
             new ScriptLoaderInternal(data)
-        }
+        },
+        connectExternalLoader
     }
 }()
