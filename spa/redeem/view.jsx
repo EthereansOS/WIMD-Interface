@@ -3,27 +3,52 @@ var Redeem = React.createClass({
         'spa/index/cardInfo.jsx',
         'spa/inlineLoader.jsx'
     ],
+    getDefaultSubscriptions() {
+        return {
+            "ethereum/ping" : this.getBalance
+        }
+    },
+    getBalance() {
+        var _this = this;
+        _this.setStateVar('balance', 0);
+        _this.controller.getBalance().then(balance => _this.setStateVar('balance', balance));
+    },
     render() {
         var _this = this;
         var [redeeming, setRedeeming] = useState(false);
         var [amount, setAmount] = useState(1);
+        var [balance] = useState(0, "balance");
+        var [bravo, setBravo] = useState(false);
         function redeem() {
+            setBravo(false);
+            if(amount <= 0) {
+                return alert("Amount must be greater than 0");
+            }
+            var bal = parseInt(balance);
+            var am = bal;
+            if(bal < am) {
+                return alert("Insufficient balance");
+            }
             setRedeeming(true);
-            _this.controller.redeem(amount).finally(() => setRedeeming(false)).catch(e => alert(e.message || e));
+            _this.controller.redeem(am).then(setBravo).finally(() => setRedeeming(false)).catch(e => alert(e.message || e));
         };
+        useEffect(() => _this.getBalance(), []);
+        useEffect(() => bravo && _this.getBalance(), [bravo]);
+        var bal = parseInt(balance);
+        var eths = 12.7 * bal;
         return (
             <div className="RedeemDragon">
                 <a className="backtocards" href="javascript:;" onClick={this.props.onBack} >x</a>
                 <div className="mainToSwap">
                     <img src="assets/img/treasure.gif"></img>
-                    <a href="javascript:;" onClick={redeem} className="RedeemBTN">Redeem</a>
+                    {redeeming && <div>Redeeming</div>}
+                    {!redeeming && <a href="javascript:;" onClick={redeem} className="RedeemBTN">Redeem</a>}
                     <aside>1 Dragon = 12.7 ETH</aside>
-                    <aside>You can redeem: 30 ETH</aside>
-                    {redeeming && <div>Redeeming...</div>}
+                    <aside>You can redeem: {eths} ETH</aside>
                     <div className="DragonSupply">
                         <figure>
                             <img src="assets/img/cardImages/199242316350403115624675989599876480538394016058.png"></img>
-                            <p></p>
+                            <p>{bal}</p>
                         </figure>
                     </div>
                 </div>
