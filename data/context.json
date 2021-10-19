@@ -14,6 +14,8 @@
     "whereIsMyDragonCraftAddress" : "0x87AD9009C4Fd0AAa7bFE74f7E00845B3f09aD0CE",
     "whereIsMyDragonCraftAddressRopsten" : "",
     "uniswapV2RouterAddress": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    "unicornDragonItemID" : "199242316350403115624675989599876480538394016058",
+    "unicornDragonItemIDRopsten" : "",
     "indexesURL" : "https://raw.githubusercontent.com/b-u-i-d-l/bazar-tokens-list/master/dist/indexes.json",
     "decentralizedFlexibleOrganizationsURL" : "https://raw.githubusercontent.com/b-u-i-d-l/bazar-tokens-list/master/dist/decentralizedFlexibleOrganizations.json",
     "decentralizedFlexibleOrganizationsURLRopsten" : "https://raw.githubusercontent.com/b-u-i-d-l/bazar-tokens-list/master/dist/programmableEquities.json",
