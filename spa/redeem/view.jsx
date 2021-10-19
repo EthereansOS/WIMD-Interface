@@ -14,6 +14,7 @@ var Redeem = React.createClass({
         return (
             <div className="RedeemDragon">
                 <img src="assets/img/treasure.gif"></img>
+                <a href="javascript:;" onClick={this.props.onBack} className="RedeemBTN">Torna ADDIETRO</a>
                 <a href="javascript:;" onClick={redeem} className="RedeemBTN">Redeem</a>
                 <aside>1 Dragon = 12.7 ETH</aside>
                 <aside>You can redeem: 30 ETH</aside>
