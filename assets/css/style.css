@@ -136,6 +136,12 @@ header .connect {float: right; margin-right: 5%; font-size: 18px; margin-top: 30
 .FarmPools figure img {width: 30px; min-height:30px; max-height:30px; display: inline-block; vertical-align: middle;}
 .FarmPools figure .SecImg {margin-left: -10px;}
 .FarmButton  {float: right;background-color: #9048fd; color: #ffffff; padding: 8px 14px; display: inline-block; margin: auto 10px; vertical-align: middle; font-size: 16px; font-weight: bold; border-radius: 8px; text-decoration: none; border-radius: 8px;}
+.RedeemDragon {background-color: #000000; text-align: center; position: relative;}
+.RedeemDragon .RedeemBTN {font-size: 20px;font-weight: bold;display: inline-block;padding: 10px 20px;background: linear-gradient(to right, #d2bff9 10%, #68f5db 50%, #a3e5ff 90%);color: #f2eafc;margin: 30px 0px;text-decoration: none;width: 260px;}
+.DragonSupply {position: absolute; bottom: 10px; left: 10px;}
+.DragonSupply figure {display: inline-block; position: relative; width:60px; height:110px;}
+.DragonSupply figure img {width: 100%; height: 100%; display:block;}
+.DragonSupply figure p {font-size: 14px; font-weight: bold; padding:10px; position:absolute; top:6px; right:-6px; background-color: #9048fd; color:white;}
 
 @media only screen and (max-device-width: 750px) {
    .Intro .Title, .Explainer, .ExplainerL, .ExplainerS, footer section {width: 90% !important; text-align: center !important;}
