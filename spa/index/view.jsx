@@ -123,7 +123,7 @@ var Index = React.createClass({
                 </section>
             </section>}
             {props.items && props.items.length > 0 && props.toggle === 'farming' && <Farming sortedItems={sortedItems}/>}
-            {props.items && props.items.length > 0 && props.toggle === 'redeem' && <Redeem sortedItems={sortedItems}/>}
+            {props.items && props.items.length > 0 && props.toggle === 'redeem' && <Redeem onBack={this.toggleFarming} sortedItems={sortedItems}/>}
         </section>);
     }
 });
