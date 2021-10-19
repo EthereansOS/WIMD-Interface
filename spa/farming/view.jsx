@@ -18,9 +18,8 @@ var Farming = React.createClass({
         var _this = this;
         return (<section>
             
-                <h1>WIMD Last farming season coming soon...</h1>
 
-            {/* 
+            
             <section className="FarmingTop">
                 <h2 className="BrandizedS">Cards</h2>
                 {this.props.sortedItems.map((it, i) => <section key={it.key} className="collection CardsBigview">
@@ -54,6 +53,8 @@ var Farming = React.createClass({
                 <section className="Delimitator"></section>
                 <h2 className="BrandizedS">Farming</h2>
                 <section className="FarmSection">
+                <h1>WIMD Last farming season coming soon...</h1>
+                    {/* 
                     <section className="FarmSectionSingle">
                         <figure>
                             <img src="assets/img/cardImages/708710380818572902317750208759935671347114619642.png"></img>
@@ -208,10 +209,12 @@ var Farming = React.createClass({
                             </aside>
                         </section>
                         
+                        
                     </section>
+                    */}
                 </section>
+                
             </section>
-            */}
         </section>);
     }
 });
