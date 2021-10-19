@@ -5,6 +5,12 @@ var Redeem = React.createClass({
     ],
     render() {
         var _this = this;
+        var [redeeming, setRedeeming] = useState(false);
+        var [amount, setAmount] = useState(1);
+        function redeem() {
+            setRedeeming(true);
+            _this.controller.redeem(amount).finally(() => setRedeeming(false)).catch(e => alert(e.message || e));
+        };
         return (
             <div className="RedeemDragon">
                 <img src="assets/img/treasure.gif"></img>
