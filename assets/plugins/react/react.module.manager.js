@@ -112,7 +112,7 @@ var ReactModuleManager = function() {
                         rendered.props = {};
                     }
                     rendered.props.className = (loader ? rendered.props.defaultClassName : rendered.props.className) || '';
-                    if(rendered.props.className && !rendered.props.className.containsAloneWord(lowerCaseViewName)) {
+                    if(rendered.props.className !== undefined && rendered.props.className !== null && !rendered.props.className.containsAloneWord(lowerCaseViewName)) {
                         if(rendered.props.className !== '') {
                             lowerCaseViewName += ' '
                         }
