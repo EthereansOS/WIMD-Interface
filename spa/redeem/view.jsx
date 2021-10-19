@@ -20,7 +20,7 @@ var Redeem = React.createClass({
                 {redeeming && <div>Redeeming</div>}
                 <div className="DragonSupply">
                     <figure>
-                        <img></img>
+                        <img src="assets/img/cardImages/199242316350403115624675989599876480538394016058.png"></img>
                         <p></p>
                     </figure>
                 </div>
