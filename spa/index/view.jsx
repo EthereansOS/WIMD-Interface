@@ -11,7 +11,8 @@ var Index = React.createClass({
         "spa/index/cardInfo.jsx"
     ],
     requiredModules : [
-        "spa/farming"
+        "spa/farming",
+        "spa/redeem"
     ],
     componentDidMount() {
         this.controller.loadAddressBarParam();
@@ -21,6 +22,11 @@ var Index = React.createClass({
         e && e.preventDefault && e.preventDefault(true) && e.stopPropagation && e.stopPropagation(true);
         var toggle = (this.state && this.state.toggle);
         this.setState({toggle : toggle === 'farming' ? null : 'farming'});
+    },
+    toggleRedeem(e) {
+        e && e.preventDefault && e.preventDefault(true) && e.stopPropagation && e.stopPropagation(true);
+        var toggle = (this.state && this.state.toggle);
+        this.setState({toggle : toggle === 'redeem' ? null : 'redeem'});
     },
     perform(e) {
         e && e.preventDefault && e.preventDefault(true) && e.stopPropagation && e.stopPropagation(true);
@@ -95,7 +101,7 @@ var Index = React.createClass({
                 {props.items && props.items.length > 0 && <a className="navLink BrandizedS SPECIALITY" href="javascript:;" onClick={this.toggleFarming}>Swap, Buy & Farm Cards</a>}
                 {window.ethereum && !window.walletAddress && <a className="connect Brandized" href="javascript:;" onClick={() => window.ethereum.enable()}>Connect</a>}
                 <a target="_blank" href="https://etherscan.io/tokenHoldings?a=0x32c87193C2cC9961F2283FcA3ca11A483d8E426B" className="navThings BrandizedS">Treasure: {window.formatMoney(window.balanceOf, 1)} ETH</a>
-                <a className="navLink BrandizedS" target="_blank" href="https://item.eth.link/?collection=0xb6ab68A44eCc9fb2244AaB83eB2f6dbA54205EBf">Collection Info</a>
+                {props.items && props.items.length > 0 && <a className="navLink BrandizedS SPECIALITY" href="javascript:;" onClick={this.toggleRedeem}>Redeem</a>}
                 {window.walletAddress && <a className="connect BrandizedS" target="_blank" href={window.getNetworkElement("etherscanURL") + "address/" + window.walletAddress}>{window.shortenWord(window.walletAddress, 15)}</a>}
             </header>
             {(!props.items || props.items.length === 0) && <InlineLoader />}
@@ -117,6 +123,7 @@ var Index = React.createClass({
                 </section>
             </section>}
             {props.items && props.items.length > 0 && props.toggle === 'farming' && <Farming sortedItems={sortedItems}/>}
+            {props.items && props.items.length > 0 && props.toggle === 'redeem' && <Redeem sortedItems={sortedItems}/>}
         </section>);
     }
 });
