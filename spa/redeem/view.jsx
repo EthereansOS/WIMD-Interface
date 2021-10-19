@@ -18,7 +18,7 @@ var Redeem = React.createClass({
         var [redeeming, setRedeeming] = useState(false);
         var [amount, setAmount] = useState(1);
         var [balance] = useState(0, "balance");
-        var [bravo, setBravo] = useState(false);
+        var [bravo, setBravo] = useState("");
         function redeem() {
             setBravo(false);
             if(amount <= 0) {
@@ -39,7 +39,7 @@ var Redeem = React.createClass({
         return (
             <div className="RedeemDragon">
                 <a className="backtocards" href="javascript:;" onClick={this.props.onBack} >x</a>
-                <div className="mainToSwap">
+                {!bravo && <div className="mainToSwap">
                     <img src="assets/img/treasure.gif"></img>
                     {redeeming && <div>Redeeming</div>}
                     {!redeeming && <a href="javascript:;" onClick={redeem} className="RedeemBTN">Redeem</a>}
@@ -51,11 +51,11 @@ var Redeem = React.createClass({
                             <p>{bal}</p>
                         </figure>
                     </div>
-                </div>
-                <div className="SuccesRedeem">
-                    <h6>Dear Dragon Hunter, <br></br>You have successfully redeemed your portion of the treasury!</h6>
-                    <a>Transaction</a>
-                </div>
+                </div>}
+                {bravo && <div className="SuccesRedeem">
+                    <h6>Dear Dragon Hunter, <br></br> you have succesfully redeemed your portion of the treasury!</h6>
+                    <a target="_blank" href={window.getNetworkElement("etherscanURL") + "tx/" + bravo}>Transaction</a>
+                </div>}
             </div>
         );
     }
