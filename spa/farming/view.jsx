@@ -16,10 +16,7 @@ var Farming = React.createClass({
     },
     render() {
         var _this = this;
-        return (<section>
-            
-
-            
+        return (<section className="farming">   
             <section className="FarmingTop">
                 <h2 className="BrandizedS">Cards</h2>
                 {this.props.sortedItems.map((it, i) => <section key={it.key} className="collection CardsBigview">
