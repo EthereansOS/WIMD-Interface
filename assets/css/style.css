@@ -144,6 +144,8 @@ header .connect {float: right; margin-right: 5%; font-size: 18px; margin-top: 30
 .DragonSupply figure {display: inline-block; position: relative; width: 120px;height: 200px;}
 .DragonSupply figure img {width: 100%; height: 100%; display:block;}
 .DragonSupply figure p {font-size: 14px; font-weight: bold; padding: 10px 12px;position: absolute;top: -15px;right: -15px; background-color: #9048fd; color:white; border-radius: 100%;}
+.backtocards {position: absolute;top: 10px;right: 10px;background-color: #e6d5ff;color: white;border-radius: 10px;padding: 10px 17px;text-decoration: none;}
+
 
 @media only screen and (max-device-width: 750px) {
    .Intro .Title, .Explainer, .ExplainerL, .ExplainerS, footer section {width: 90% !important; text-align: center !important;}
